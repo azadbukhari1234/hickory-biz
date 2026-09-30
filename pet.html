@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Claws - Joyful Pet Sitting Services</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome for Cute Icons -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <!-- Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+        }
+        .font-heading {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Custom Keyframe Animations for Alive Feeling */
+        @keyframes bounce-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(8deg); }
+        }
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+        @keyframes float-bubble {
+            0% { transform: translateY(100vh) scale(0.3); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+        .logo-bounce {
+            animation: bounce-slow 3s infinite ease-in-out;
+        }
+        .wiggle-hover:hover {
+            animation: wiggle 0.4s ease-in-out infinite;
+        }
+        .bubble {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            bottom: -50px;
+            animation: float-bubble 12s infinite linear;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-slate-700 overflow-x-hidden relative">
+
+    <!-- Floating Background Bubbles/Shapes -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="bubble" style="left: 10%; width: 80px; height: 80px; animation-duration: 14s; animation-delay: 1s;"></div>
+        <div class="bubble" style="left: 30%; width: 120px; height: 120px; animation-duration: 18s; animation-delay: 4s;"></div>
+        <div class="bubble" style="left: 75%; width: 60px; height: 60px; animation-duration: 11s; animation-delay: 2s;"></div>
+        <div class="bubble" style="left: 90%; width: 100px; height: 100px; animation-duration: 16s; animation-delay: 7s;"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 bg-white/90 backdrop-blur-md shadow-md z-50 px-6 py-4 rounded-b-3xl border-b-4 border-yellow-400 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Moving Logo Component -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="bg-amber-400 p-2.5 rounded-full shadow-inner logo-bounce border-2 border-dashed border-white">
+                    <i class="fa-solid fa-paw text-2xl text-white"></i>
+                </div>
+                <span class="font-heading text-2xl md:text-3xl font-bold tracking-wide bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
+                    Paws & Claws
+                </span>
+            </a>
+            
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8 font-bold text-lg">
+                <a href="#services" class="text-slate-600 hover:text-orange-500 transition-colors duration-200">Our Services</a>
+                <a href="#gallery" class="text-slate-600 hover:text-orange-500 transition-colors duration-200">Happy Guests</a>
+                <a href="#testimonials" class="text-slate-600 hover:text-orange-500 transition-colors duration-200">Reviews</a>
+                <a href="#booking" class="bg-gradient-to-r from-orange-400 to-amber-400 text-white px-6 py-2.5 rounded-full shadow-md hover:shadow-lg transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 font-heading tracking-wide">
+                    Book a Sitter!
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative max-w-7xl mx-auto px-6 pt-12 pb-24 md:py-32 flex flex-col md:flex-row items-center gap-12 z-10">
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <span class="bg-orange-100 text-orange-600 font-bold px-4 py-2 rounded-full text-sm uppercase tracking-wider border border-orange-200 inline-block animate-bounce">
+                🐾 Trusted local pet sitters
+            </span>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-slate-800 leading-tight">
+                Premium Love & Care When You're <span class="text-orange-500 underline decoration-wavy decoration-amber-400">Away!</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-xl font-medium leading-relaxed">
+                We turn pet anxiety into a fun-filled vacation! Certified, fully insured sitters dedicated to keeping your fur babies happy, dynamic, and perfectly pampered.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center md:jsutify-start pt-2">
+                <a href="#services" class="bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-xl shadow-orange-500/30 transform hover:-translate-y-1 transition-all duration-200 font-heading">
+                    Explore Services
+                </a>
+                <a href="#booking" class="bg-white hover:bg-amber-100 text-amber-600 font-bold text-lg px-8 py-4 rounded-2xl shadow-lg border-2 border-amber-300 transform hover:-translate-y-1 transition-all duration-200 font-heading">
+                    Check Availability
+                </a>
+            </div>
+        </div>
+        
+        <!-- Interactive Happy Photo Frames Frame -->
+        <div class="flex-1 relative w-full max-w-md mx-auto aspect-square">
+            <div class="absolute inset-0 bg-gradient-to-tr from-amber-300 to-orange-400 rounded-full filter blur-2xl opacity-30 transform scale-95 animate-pulse"></div>
+            <!-- Large Frame (Dog) -->
+            <div class="absolute top-4 left-4 w-3/4 aspect-[4/5] bg-white p-3 rounded-3xl shadow-2xl border-4 border-amber-400 rotate-[-4deg] hover:rotate-0 transition-transform duration-300 group overflow-hidden">
+                <img src="https://unsplash.com" alt="Happy Golden Retriever" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <!-- Small Frame (Cat) -->
+            <div class="absolute bottom-4 right-4 w-1/2 aspect-square bg-white p-2 rounded-2xl shadow-2xl border-4 border-orange-400 rotate-[8deg] hover:rotate-0 transition-transform duration-300 group overflow-hidden">
+                <img src="https://unsplash.com" alt="Playful Cat" class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500">
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Dynamic Section (Rendered via Javascript) -->
+    <section id="services" class="bg-white py-24 relative z-10 border-y-8 border-amber-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Our Happy Services 🐶</h2>
+                <p class="text-slate-600 font-medium">We customize care routines to match your pet's personality perfectly. Check out what we offer!</p>
+            </div>
+            
+            <!-- Cards Container -->
+            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will inject data here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Photo Gallery Section -->
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Gallery of Big Smiles</h2>
+            <p class="text-slate-600 font-medium">Real daily updates sent directly to our clients during their custom booking sessions.</p>
+        </div>
+
+        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Javascript dynamic photo wall layout injection -->
+        </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section id="testimonials" class="bg-gradient-to-b from-orange-400 to-amber-400 py-24 relative z-10 text-white rounded-t-[50px]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">What Pet Parents Say</h2>
+                <div class="w-24 h-1 bg-white mx-auto rounded-full"></div>
+            </div>
+
+            <div id="reviews-slider" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Javascript will inject reviews here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Interactive Dynamic Booking Section -->
+    <section id="booking" class="bg-white py-24 border-t-8 border-amber-100 relative z-10">
+        <div class="max-w-3xl mx-auto px-6 bg-amber-50 p-8 sm:p-12 rounded-[32px] border-4 border-dashed border-amber-300 shadow-xl">
+            <div class="text-center mb-8">
+                <i class="fa-solid fa-calendar-check text-4xl text-orange-500 mb-3 animate-bounce"></i>
