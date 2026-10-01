@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paws & Claws - Joyful Pet Sitting Services</title>
+    <link rel="icon" type="image/x-icon" href="https://media.azxgo.com/cats/cat1.jpeg">
+    <title>Hickory Paws</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- FontAwesome for Cute Icons -->
@@ -68,7 +69,7 @@
                     <i class="fa-solid fa-paw text-2xl text-white"></i>
                 </div>
                 <span class="font-heading text-2xl md:text-3xl font-bold tracking-wide bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent group-hover:scale-105 transition-transform duration-300">
-                    Paws & Claws
+                    Hickory Paws
                 </span>
             </a>
             
@@ -111,11 +112,11 @@
             <div class="absolute inset-0 bg-gradient-to-tr from-amber-300 to-orange-400 rounded-full filter blur-2xl opacity-30 transform scale-95 animate-pulse"></div>
             <!-- Large Frame (Dog) -->
             <div class="absolute top-4 left-4 w-3/4 aspect-[4/5] bg-white p-3 rounded-3xl shadow-2xl border-4 border-amber-400 rotate-[-4deg] hover:rotate-0 transition-transform duration-300 group overflow-hidden">
-                <img src="https://unsplash.com" alt="Happy Golden Retriever" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
+                <img src="https://media.azxgo.com/cats/cat3.jpeg" alt="Happy Golden Retriever" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-500">
             </div>
             <!-- Small Frame (Cat) -->
             <div class="absolute bottom-4 right-4 w-1/2 aspect-square bg-white p-2 rounded-2xl shadow-2xl border-4 border-orange-400 rotate-[8deg] hover:rotate-0 transition-transform duration-300 group overflow-hidden">
-                <img src="https://unsplash.com" alt="Playful Cat" class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500">
+                <img src="https://media.azxgo.com/cats/cat2.jpeg" alt="Playful Cat" class="w-full h-full object-cover rounded-xl group-hover:scale-105 transition-transform duration-500">
             </div>
         </div>
     </header>
@@ -123,41 +124,408 @@
     <!-- Services Dynamic Section (Rendered via Javascript) -->
     <section id="services" class="bg-white py-24 relative z-10 border-y-8 border-amber-200">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Our Happy Services 🐶</h2>
-                <p class="text-slate-600 font-medium">We customize care routines to match your pet's personality perfectly. Check out what we offer!</p>
-            </div>
+            <!-- OUR SERVICES SECTION -->
+<!-- OUR SERVICES SECTION -->
+<section id="services" class="py-16 ">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
+        Our Happy Services <span class="inline-block animate-bounce">🐱</span>
+      </h2>
+      <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">
+        We customize care routines to match your pet's personality perfectly. Check out what we offer!
+      </p>
+    </div>
+
+    <!-- Dynamic Services Grid Container -->
+    <div id="services-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service cards will be rendered dynamically via JavaScript -->
+    </div>
+
+  </div>
+</section>
+
+<!-- CUSTOM JOY ANIMATIONS (CSS) -->
+<style>
+  @keyframes joySway {
+    0%, 100% { transform: rotate(-4deg) translateY(0px); }
+    50% { transform: rotate(4deg) translateY(-8px); }
+  }
+
+  @keyframes joyBounce {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-10px) scale(1.03); }
+  }
+
+  .animate-joy-sway {
+    animation: joySway 3s ease-in-out infinite;
+  }
+
+  .animate-joy-bounce {
+    animation: joyBounce 2.5s ease-in-out infinite;
+  }
+</style>
+
+<!-- CENTRALIZED JAVASCRIPT DATA & RENDERER -->
+<script>
+  // 1. Centralized Services Data Array
+  const servicesData = [
+    {
+      id: "cat-pampering",
+      title: "Cat Sitting & Pampering",
+      description: "In-home visits for your independent whiskered companions. Includes litter box cleaning, fresh meals, grooming, and interactive feather-toy sessions.",
+      price: "RM25",
+      unit: "/ visit",
+      image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=600&q=80",
+      imageAlt: "Happy Purring Cat",
+      badgeIcon: "❤️",
+      badgeColorClass: "text-rose-500",
+      animationClass: "animate-joy-sway",
+      pulseColorClass: "bg-amber-300/30"
+    },
+    {
+      id: "kitten-playtime",
+      title: "Kitten Play & Socialization",
+      description: "High-energy fun tailored for energetic young cats. Laser tag, climbing, and curiosity enrichment designed to keep them active and happy.",
+      price: "RM30",
+      unit: "/ 45 mins",
+      image: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=600&q=80",
+      imageAlt: "Playful Kitten",
+      badgeIcon: "🐾",
+      badgeColorClass: "text-amber-500",
+      animationClass: "animate-joy-bounce",
+      pulseColorClass: "bg-orange-300/30"
+    },
+    {
+      id: "cat-walking",
+      title: "Cat Walking & Overnight Stay",
+      description: "Dynamic neighborhood walks, outdoor playtimes, and cozy overnight stays to ensure total peace of mind for cat parents on vacation.",
+      price: "RM35",
+      unit: "/ walk",
+      image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=600&q=80",
+      imageAlt: "Happy Cat",
+      badgeIcon: "🎾",
+      badgeColorClass: "text-yellow-500",
+      animationClass: "animate-joy-sway",
+      pulseColorClass: "bg-yellow-300/30"
+    }
+  ];
+
+  // 2. Component HTML Generator Function
+  function createServiceCard(service) {
+    return `
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-amber-100 flex flex-col justify-between group">
+        <div>
+          <!-- Animated Image Container -->
+          <div class="relative w-full h-48 bg-amber-100/60 rounded-xl overflow-hidden mb-6 flex items-center justify-center">
+            <div class="absolute w-32 h-32 ${service.pulseColorClass} rounded-full animate-ping"></div>
             
-            <!-- Cards Container -->
-            <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Javascript will inject data here -->
-            </div>
+            <img 
+              src="${service.image}" 
+              alt="${service.imageAlt}" 
+              class="w-36 h-36 object-cover rounded-full shadow-lg border-4 border-white ${service.animationClass} group-hover:scale-110 transition-transform duration-300"
+              loading="lazy"
+            />
+            
+            <span class="absolute top-3 right-3 bg-white ${service.badgeColorClass} p-2 rounded-full shadow animate-bounce">
+              ${service.badgeIcon}
+            </span>
+          </div>
+
+          <h3 class="text-xl font-bold text-slate-800 mb-2 group-hover:text-amber-600 transition-colors">
+            ${service.title}
+          </h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            ${service.description}
+          </p>
+        </div>
+
+        <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+          <span class="text-lg font-extrabold text-amber-600">${service.price} <span class="text-xs text-slate-400 font-normal">${service.unit}</span></span>
+          <a href="#book" class="inline-flex items-center text-sm font-semibold text-amber-600 hover:text-amber-700">
+            Book Now <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  // 3. Render Services to DOM and Bind Mouse Interactions
+  document.addEventListener('DOMContentLoaded', () => {
+    const servicesGrid = document.getElementById('services-grid');
+    if (!servicesGrid) return;
+
+    // Populate HTML from data
+    servicesGrid.innerHTML = servicesData.map(service => createServiceCard(service)).join('');
+
+    // Optional hover rotation interaction
+    const cards = servicesGrid.querySelectorAll('.group');
+    cards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        const img = card.querySelector('img');
+        if (img) img.classList.add('rotate-6');
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        const img = card.querySelector('img');
+        if (img) img.classList.remove('rotate-6');
+      });
+    });
+  });
+</script>
         </div>
     </section>
 
     <!-- Live Photo Gallery Section -->
     <section id="gallery" class="py-24 max-w-7xl mx-auto px-6 relative z-10">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Gallery of Big Smiles</h2>
-            <p class="text-slate-600 font-medium">Real daily updates sent directly to our clients during their custom booking sessions.</p>
+        <!-- GALLERY OF BIG SMILES SECTION -->
+<section id="gallery" class="py-16 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
+        Gallery of Big Smiles <span class="inline-block animate-bounce">📸✨</span>
+      </h2>
+      <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">
+        Real daily updates sent directly to our clients during their custom booking sessions.
+      </p>
+    </div>
+
+    <!-- Auto Infinite Scrolling Track Container -->
+    <div class="relative w-full overflow-hidden group py-4">
+      <!-- Gradient Fade Overlays for smooth edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-amber-50 to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-amber-50 to-transparent z-10 pointer-events-none"></div>
+
+      <!-- Scrolling Wrapper -->
+      <div id="gallery-track" class="flex gap-6 w-max animate-gallery-scroll group-hover:[animation-play-state:paused]">
+        <!-- Cards will be populated and cloned automatically via JS -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS ANIMATION FOR SMOOTH AUTO SCROLLING -->
+<style>
+  @keyframes galleryScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-gallery-scroll {
+    animation: galleryScroll 25s linear infinite;
+  }
+</style>
+
+<!-- CENTRALIZED JAVASCRIPT DATA & RENDERER -->
+<script>
+  // 1. Centralized Gallery Data Array
+  const galleryData = [
+    {
+      id: 1,
+      petName: "Milo & Otis",
+      caption: "Afternoon sunbathing & playtime!",
+      image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=500&q=80",
+      tag: "Cat Sitting"
+    },
+    {
+      id: 2,
+      petName: "Bella",
+      caption: "ChASING bubbles in the backyard 🎾",
+      image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=500&q=80",
+      tag: "Dog Walk"
+    },
+    {
+      id: 3,
+      petName: "Oliver",
+      caption: "Mastering the feather wand toy 😼",
+      image: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=500&q=80",
+      tag: "Kitten Play"
+    },
+    {
+      id: 4,
+      petName: "Charlie & Luna",
+      caption: "Post-walk nap time cozy cuddle session",
+      image: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=500&q=80",
+      tag: "Overnight Stay"
+    },
+    {
+      id: 5,
+      petName: "Cleo",
+      caption: "Enjoying her daily organic catnip treat 🌿",
+      image: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=500&q=80",
+      tag: "Cat Care"
+    }
+  ];
+
+  // 2. Component HTML Generator with Framed Card Design
+  function createGalleryCard(item) {
+    return `
+      <div class="w-64 sm:w-72 flex-shrink-0 bg-white rounded-2xl p-3 border-4 border-amber-200/80 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+        <!-- Photo Frame Inner Container -->
+        <div class="relative h-64 sm:h-72 w-full rounded-xl overflow-hidden bg-amber-50">
+          <img 
+            src="${item.image}" 
+            alt="${item.petName}" 
+            class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+            loading="lazy"
+          />
+          <!-- Tag Badge -->
+          <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-amber-700 text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+            ${item.tag}
+          </span>
         </div>
 
-        <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <!-- Javascript dynamic photo wall layout injection -->
+        <!-- Caption & Pet Info -->
+        <div class="pt-3 px-1">
+          <h3 class="font-bold text-slate-800 text-base">${item.petName}</h3>
+          <p class="text-xs text-slate-500 mt-1 line-clamp-2">${item.caption}</p>
         </div>
+      </div>
+    `;
+  }
+
+  // 3. Render and duplicate for seamless infinite loop
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('gallery-track');
+    if (!track) return;
+
+    // Generate inner markup from data
+    const originalCards = galleryData.map(item => createGalleryCard(item)).join('');
+    
+    // Duplicate dataset so the CSS keyframe loop moves seamlessly from 0% to -50%
+    track.innerHTML = originalCards + originalCards;
+  });
+</script>
     </section>
 
     <!-- Client Testimonials Section -->
     <section id="testimonials" class="bg-gradient-to-b from-orange-400 to-amber-400 py-24 relative z-10 text-white rounded-t-[50px]">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">What Pet Parents Say</h2>
-                <div class="w-24 h-1 bg-white mx-auto rounded-full"></div>
-            </div>
+            <!-- WHAT PET PARENTS SAY SECTION -->
+<section id="reviews" class="py-16 text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-10">
+      <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+        What Pet Parents Say
+      </h2>
+      <div class="w-16 h-1 bg-white/60 mx-auto mt-3 rounded-full"></div>
+    </div>
 
-            <div id="reviews-slider" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Javascript will inject reviews here -->
-            </div>
+    <!-- Horizontal Scroll Container -->
+    <div class="relative">
+      <div 
+        id="reviews-track" 
+        class="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-amber-300 scrollbar-track-transparent px-2"
+      >
+        <!-- Review cards dynamically rendered via JavaScript -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CUSTOM SCROLLBAR STYLING FOR CLEANER LOOK -->
+<style>
+  /* Optional sleek custom scrollbar for horizontal scrolling */
+  #reviews-track::-webkit-scrollbar {
+    height: 6px;
+  }
+  #reviews-track::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+  }
+  #reviews-track::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 9999px;
+  }
+  #reviews-track::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+
+<!-- CENTRALIZED JAVASCRIPT DATA & RENDERER -->
+<script>
+  // 1. Centralized Testimonial Data
+  const petParentsReviewsData = [
+    {
+      id: 1,
+      parentName: "Sarah M.",
+      petName: "Whiskers & Biscuit",
+      catPhoto: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80",
+      quote: "Finding sitters who actually understand cat body language is rare. Whiskers was relaxed and purring the entire time we were away!"
+    },
+    {
+      id: 2,
+      parentName: "David K.",
+      petName: "Mochi",
+      catPhoto: "https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=400&q=80",
+      quote: "Mochi usually hides when strangers visit, but she came right out for feather playtime. The daily updates gave us complete peace of mind."
+    },
+    {
+      id: 3,
+      parentName: "Elena R.",
+      petName: "Simba",
+      catPhoto: "https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=400&q=80",
+      quote: "Exceptional care! Simba got his medication right on schedule and plenty of lap cuddles. We won't book anyone else."
+    },
+    {
+      id: 4,
+      parentName: "Marcus L.",
+      petName: "Cleo & Felix",
+      catPhoto: "https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=400&q=80",
+      quote: "Super reliable, communicative, and affectionate. My two kitties were pampered like royalty!"
+    }
+  ];
+
+  // 2. Component Renderer Function
+  function createReviewCard(review) {
+    return `
+      <div class="snap-center shrink-0 w-80 sm:w-96 bg-white text-slate-800 rounded-2xl p-6 shadow-lg border border-amber-100 flex flex-col justify-between">
+        
+        <!-- Review Text -->
+        <p class="text-slate-600 text-sm leading-relaxed italic mb-6">
+          "${review.quote}"
+        </p>
+
+        <!-- Pet Parent Profile Header (Photo + Name) -->
+        <div class="flex items-center gap-4 pt-4 border-t border-slate-100">
+          <img 
+            src="${review.catPhoto}" 
+            alt="${review.petName}" 
+            class="w-14 h-14 rounded-full object-cover border-2 border-amber-400 shadow-sm shrink-0"
+            loading="lazy"
+          />
+          <div>
+            <h3 class="font-bold text-slate-800 text-base leading-snug">${review.parentName}</h3>
+            <p class="text-xs text-amber-600 font-medium">Parent of ${review.petName}</p>
+          </div>
+        </div>
+
+      </div>
+    `;
+  }
+
+  // 3. Render into DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    const reviewsTrack = document.getElementById('reviews-track');
+    if (!reviewsTrack) return;
+
+    reviewsTrack.innerHTML = petParentsReviewsData
+      .map(review => createReviewCard(review))
+      .join('');
+  });
+</script>
         </div>
     </section>
 
@@ -166,3 +534,129 @@
         <div class="max-w-3xl mx-auto px-6 bg-amber-50 p-8 sm:p-12 rounded-[32px] border-4 border-dashed border-amber-300 shadow-xl">
             <div class="text-center mb-8">
                 <i class="fa-solid fa-calendar-check text-4xl text-orange-500 mb-3 animate-bounce"></i>
+                
+                <!-- CONTACT SECTION -->
+<section id="contact" class="py-8 bg-amber-50/60 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
+        Get in Touch <span class="inline-block animate-bounce">📍🐾</span>
+      </h2>
+      <p class="mt-3 text-lg text-slate-600 max-w-2xl mx-auto">
+        Have questions or want to schedule a meet-and-greet? We'd love to hear from you!
+      </p>
+    </div>
+
+    <!-- Main Contact Card Container -->
+    <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border-2 border-amber-200/80 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      
+      <!-- Left Column: Location Details & WhatsApp Button -->
+      <div id="contact-info-container" class="space-y-6">
+        <!-- Rendered dynamically via JavaScript -->
+      </div>
+
+      <!-- Right Column: Interactive Embedded Map -->
+      <div class="w-full h-72 sm:h-80 rounded-2xl overflow-hidden border-4 border-amber-100 shadow-inner relative group">
+        <iframe 
+          id="contact-map-frame"
+          src=""
+          class="w-full h-full border-0" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Location Map"
+        ></iframe>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CENTRALIZED JAVASCRIPT DATA & RENDERER -->
+<script>
+  // 1. Centralized Contact Configuration Data
+  const contactData = {
+    businessName: "Hickory House",
+    tagline: "Your Pets' Sitter",
+    address: "Rumah Azad, Bangi Lama, Selangor, Malaysia",
+    hours: "Mon - Sun: 8:00 AM - 8:00 PM",
+    phoneDisplay: "+60 1111 8888",
+    whatsappNumber: "+60 1111 8888", // Digits only with country code
+    whatsappMessage: "Hi Hickory House! 🐾 I would like to inquire about your pet sitting services.",
+    // Google Maps Embed URL
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.524259512!2d101.8165921758458!3d2.9147866421786364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdc93934a21767%3A0x7a356dccd2bce686!2sBangi%2C%20Selangor!5e1!3m2!1sen!2smy!4v1790866786165!5m2!1sen!2smy"
+  };
+
+  // 2. Component Renderer Function
+  function renderContactSection(data) {
+    const encodedMessage = encodeURIComponent(data.whatsappMessage);
+    const whatsappLink = `https://wa.me/${data.whatsappNumber}?text=${encodedMessage}`;
+
+    return `
+      <div>
+        <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-3">
+          🏡 Visit or Message Us
+        </span>
+        <h3 class="text-2xl font-extrabold text-slate-800">${data.businessName}</h3>
+        <p class="text-sm text-slate-500 font-medium mt-1">${data.tagline}</p>
+      </div>
+
+      <div class="space-y-4 pt-2">
+        <!-- Address Item -->
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center shrink-0 text-amber-600 text-lg">
+            📍
+          </div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Our Location</h4>
+            <p class="text-slate-700 font-semibold text-sm mt-0.5">${data.address}</p>
+          </div>
+        </div>
+
+        <!-- Hours Item -->
+        <div class="flex items-start gap-3">
+          <div class="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center shrink-0 text-amber-600 text-lg">
+            ⏰
+          </div>
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Opening Hours</h4>
+            <p class="text-slate-700 font-semibold text-sm mt-0.5">${data.hours}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Button: Direct WhatsApp Link -->
+      <div class="pt-4">
+        <a 
+          href="${whatsappLink}" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 gap-3"
+        >
+          <!-- WhatsApp Icon -->
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001l-1.416 5.17 5.293-1.388c1.464.798 3.115 1.218 4.78 1.219h.005c5.507 0 9.991-4.479 9.991-9.986 0-2.668-1.039-5.176-2.926-7.063a9.925 9.925 0 00-7.069-2.937zm0 1.834c4.49 0 8.148 3.658 8.148 8.15 0 2.179-.848 4.228-2.389 5.768a8.09 8.09 0 01-5.761 2.392h-.004c-1.464 0-2.906-.392-4.17-1.134l-.299-.176-3.1 1.053.827-3.021-.193-.308a8.106 8.106 0 01-1.246-4.373c0-4.492 3.659-8.151 8.151-8.151zm-3.5 4.381c-.19 0-.5.071-.762.357-.262.286-.999.976-.999 2.38 0 1.404 1.023 2.761 1.166 2.952.143.19 2.013 3.074 4.878 4.31.682.294 1.214.47 1.629.601.685.218 1.309.187 1.802.114.551-.082 1.693-.691 1.932-1.359.239-.668.239-1.24.167-1.359-.071-.119-.262-.19-.548-.333s-1.693-.835-1.955-.93c-.262-.095-.453-.143-.644.143-.19.286-.739.93-.906 1.121-.167.19-.333.214-.619.071-.286-.143-1.205-.444-2.296-1.417-.849-.757-1.422-1.692-1.589-1.978-.167-.286-.018-.44.125-.582.128-.128.286-.333.429-.5.143-.167.19-.286.286-.476.095-.19.048-.357-.024-.5-.071-.143-.644-1.552-.882-2.123-.232-.557-.468-.482-.644-.491l-.548-.009z"/>
+          </svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
+    `;
+  }
+
+  // 3. Render into DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    const infoContainer = document.getElementById('contact-info-container');
+    const mapFrame = document.getElementById('contact-map-frame');
+
+    if (infoContainer) {
+      infoContainer.innerHTML = renderContactSection(contactData);
+    }
+
+    if (mapFrame) {
+      mapFrame.src = contactData.mapEmbedUrl;
+    }
+  });
+</script>
