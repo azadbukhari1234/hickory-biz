@@ -85,29 +85,6 @@
         </div>
     </nav>
 
-<!-- Counter Logic (Using CountAPI) -->
-<script>
-  (async function updateVisitorCount() {
-    // Unique namespace for your website
-    const namespace = "hickorypet_azxgo_com";
-    const today = new Date().toISOString().slice(0, 10); // Format: YYYY-MM-DD
-
-    try {
-      // Update Total Visits
-      const totalRes = await fetch(`https://api.countapi.xyz/hit/${namespace}/total`);
-      const totalData = await totalRes.json();
-      document.getElementById("total-count").innerText = totalData.value.toLocaleString();
-
-      // Update Daily Visits
-      const dailyRes = await fetch(`https://api.countapi.xyz/hit/${namespace}/day_${today}`);
-      const dailyData = await dailyRes.json();
-      document.getElementById("daily-count").innerText = dailyData.value.toLocaleString();
-    } catch (error) {
-      console.error("Error fetching visitor count:", error);
-    }
-  })();
-</script>
-
     <!-- Hero Section -->
     <header class="relative max-w-7xl mx-auto px-6 pt-12 pb-24 md:py-32 flex flex-col md:flex-row items-center gap-12 z-10">
         <div class="flex-1 space-y-6 text-center md:text-left">
